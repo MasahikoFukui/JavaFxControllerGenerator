@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="555.0" maxWidth="697.0" minHeight="129.0" minWidth="547.0" prefHeight="357.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jp.fukui.controllergenerator.app.IndividuallyController">
+   <children>
+      <Label layoutX="26.0" layoutY="47.0" text="FXMLファイル" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="47.0" />
+      <Pane layoutX="339.0" layoutY="80.0" onDragDetected="#controllerDragDetected" prefHeight="202.0" prefWidth="202.0" style="-fx-background-color: lightgray; -fx-border-color: black;" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <ImageView fx:id="dstImage" fitHeight="200.0" fitWidth="200.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+         </children></Pane>
+      <Label layoutX="339.0" layoutY="47.0" text="コントローラ ソース" AnchorPane.rightAnchor="104.0" AnchorPane.topAnchor="47.0" />
+      <Pane layoutX="24.0" layoutY="80.0" onDragDropped="#fxmlDropped" onDragOver="#fxmlDragOver" prefHeight="202.0" prefWidth="202.0" style="-fx-background-color: lightgray; -fx-border-color: black;" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <ImageView fx:id="srcImage" fitHeight="200.0" fitWidth="200.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/image/src0.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+      <Line endX="-46.0" layoutX="354.0" layoutY="181.0" startX="-100.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="8.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="252.0" AnchorPane.topAnchor="177.0" />
+      <Line endX="-80.0" endY="20.0" layoutX="390.0" layoutY="160.0" startX="-100.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="8.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="156.0" />
+      <Line endX="-80.0" endY="-20.0" layoutX="390.0" layoutY="202.0" startX="-100.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="8.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="178.0" />
+      <Label fx:id="fxmlName" alignment="CENTER" layoutX="14.0" layoutY="269.0" prefHeight="17.0" prefWidth="229.0" />
+      <Label fx:id="controllerName" alignment="CENTER" layoutX="307.0" layoutY="269.0" prefHeight="17.0" prefWidth="229.0" />
+      <CheckBox fx:id="useEventObserver" layoutX="24.0" layoutY="310.0" mnemonicParsing="false" onAction="#useEventObserverChecked" text="イベント通知処理を組み込む" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="310.0" />
+      <MenuBar layoutX="-1.0" prefHeight="29.0" prefWidth="564.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="ファイル">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#closeMenu" text="閉じる" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="表示切り替え">
+               <items>
+                  <CheckMenuItem fx:id="whole" mnemonicParsing="false" onAction="#openWholeMenu" text="パッケージ全体" />
+                  <CheckMenuItem disable="true" mnemonicParsing="false" selected="true" text="個別生成" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="ヘルプ">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#aboutMenu" text="このアプリについて" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
